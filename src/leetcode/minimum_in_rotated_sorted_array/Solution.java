@@ -1,4 +1,4 @@
-package minimum_in_rotated_sorted_array;
+package leetcode.minimum_in_rotated_sorted_array;
 
 public class Solution {
 
