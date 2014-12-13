@@ -1,6 +1,6 @@
-package best_time_buy_and_sell_stock2;
+package leetcode.best_time_buy_and_sell_stock;
 
-public class Solution {
+public class Solution_better {
 	public int maxProfit(int[] prices) {
 
 		if (prices.length < 1) {
@@ -44,7 +44,7 @@ public class Solution {
 
 	public static void main(String[] args) {
 
-		Solution solution = new Solution();
+		Solution_better solution = new Solution_better();
 
 		System.out.println(solution.maxProfit(new int[] { 3, 7, 5, 4, 2, 8, 9,
 				10 }));

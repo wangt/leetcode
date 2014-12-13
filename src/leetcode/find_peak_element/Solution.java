@@ -1,4 +1,4 @@
-package find_peak_element;
+package leetcode.find_peak_element;
 
 import java.util.Stack;
 

@@ -1,4 +1,4 @@
-package max_points_on_a_line;
+package leetcode.max_points_on_a_line;
 
 import java.util.HashMap;
 import java.util.Map;

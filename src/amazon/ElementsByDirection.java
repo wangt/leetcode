@@ -38,7 +38,7 @@ public class ElementsByDirection {
 
 	public List<Node> move(Node[][] matrix, Direction... directions) {
 
-		List<Node> nodes = new ArrayList<>();
+		List<Node> nodes = new ArrayList<Node>();
 
 		int currentRow = 0;
 		int currentCol = 0;

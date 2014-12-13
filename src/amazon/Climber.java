@@ -15,7 +15,7 @@ public class Climber {
 
 		scanner.useDelimiter(",|\n");
 
-		List<Mountain> mountains = new ArrayList<>();
+		List<Mountain> mountains = new ArrayList<Mountain>();
 
 		int n = scanner.nextInt();
 
@@ -36,7 +36,7 @@ public class Climber {
 
 	public int walk() {
 
-		Set<Mountain> mountains = new HashSet<>(readMoutains());
+		Set<Mountain> mountains = new HashSet<Mountain>(readMoutains());
 
 		int distance = 0;
 

@@ -1,4 +1,4 @@
-package best_time_buy_and_sell_stock2;
+package leetcode.best_time_buy_and_sell_stock3;
 
 public class Solution {
 	public int maxProfit(int[] prices) {
