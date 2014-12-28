@@ -3,6 +3,7 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * https://oj.leetcode.com/problems/combination-sum/
@@ -28,17 +29,17 @@ public class CombinationSum {
 		Arrays.sort(candidates);
 
 		List<List<Integer>> result = new ArrayList<List<Integer>>();
-		dfs(result, candidates, 0, new ArrayList<Integer>(), target);
+		dfs(result, candidates, 0, new Stack<Integer>(), target);
 		return result;
 
 	}
 
 	public void dfs(List<List<Integer>> result, int[] candidates, int index,
-			List<Integer> combination, int target) {
+			Stack<Integer> combination, int target) {
 
 		if (target == 0) {
 
-			result.add(combination);
+			result.add(new ArrayList<Integer>(combination));
 
 			return;
 		}
@@ -49,10 +50,10 @@ public class CombinationSum {
 
 			if (newTarget >= 0) {
 
-				List<Integer> list = new ArrayList<Integer>(combination);
-				list.add(candidates[i]);
+				combination.push(candidates[i]);
+				dfs(result, candidates, i, combination, newTarget);
+				combination.pop();
 
-				dfs(result, candidates, i, list, newTarget);
 			} else {
 				break;
 			}
