@@ -11,6 +11,11 @@ package leetcode;
  * 
  * For example, Given 1->4->3->2->5->2 and x = 3, return 1->2->2->4->3->5.
  * 
+ * A simple way: the fundamental principles are to separate the list into 2
+ * distinct lists and link them afterwards.
+ * 
+ * https://oj.leetcode.com/discuss/21032/very-concise-one-pass-solution
+ * 
  * @author wangt
  *
  */
@@ -49,29 +54,29 @@ public class PartitionList {
 				}
 
 				smallCur = cur;
-				
+
 			} else {
 				pre = cur;
 			}
 
 			cur = next;
-			
+
 			printList(newHead.next);
-			
-			System.out.println("smallCur:"+smallCur.val+", pre:"+pre.val);
+
+			System.out.println("smallCur:" + smallCur.val + ", pre:" + pre.val);
 
 		}
 
 		return newHead.next;
 
 	}
-	
-	private void printList(ListNode head){
+
+	private void printList(ListNode head) {
 		while (head != null) {
-			System.out.print(head.val+" ");
+			System.out.print(head.val + " ");
 			head = head.next;
 		}
-		
+
 		System.out.println();
 	}
 
@@ -85,10 +90,10 @@ public class PartitionList {
 
 		head = pl.partition(head, 4);
 
-//		while (head != null) {
-//			System.out.println(head.val);
-//			head = head.next;
-//		}
+		// while (head != null) {
+		// System.out.println(head.val);
+		// head = head.next;
+		// }
 
 	}
 
