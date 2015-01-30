@@ -52,6 +52,7 @@ public class PermutationSequence {
 				if (counter == c) {
 					sb.append(nums[j]);
 					nums[j] = -1;
+					break;
 				}
 			}
 
