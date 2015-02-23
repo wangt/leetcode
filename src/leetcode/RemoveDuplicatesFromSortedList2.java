@@ -24,31 +24,34 @@ public class RemoveDuplicatesFromSortedList2 {
 
 		ListNode cur = newHead;
 
-		ListNode preNode = head;
-		int dups = 1;
+		ListNode pre = head;
+
 		head = head.next;
+
+		int dups = 0;
 
 		while (head != null) {
 
-			if (preNode.val == head.val) {
+			if (head.val == pre.val) {
 				dups++;
 			} else {
-				if (dups == 1) {
-					cur.next = preNode;
-					cur = preNode;
+
+				if (dups == 0) {
+					cur.next = pre;
+					cur = cur.next;
 					cur.next = null;
 				}
 
-				preNode = head;
-				dups = 1;
+				pre = head;
+				dups = 0;
+
 			}
 
 			head = head.next;
-
 		}
 
-		if (dups == 1) {
-			cur.next = preNode;
+		if (dups == 0) {
+			cur.next = pre;
 		}
 
 		return newHead.next;
