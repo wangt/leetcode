@@ -14,34 +14,30 @@ package leetcode;
  */
 public class RemoveDuplicatesFromSortedList {
 	public ListNode deleteDuplicates(ListNode head) {
-
 		if (head == null || head.next == null) {
 			return head;
 		}
 
-		ListNode cur1 = head;
+		ListNode p1 = head;
 
-		ListNode cur2 = head;
+		ListNode p2 = head.next;
 
-		ListNode pre = head;
+		p1.next = null;
 
-		while (cur2.next != null) {
+		while (p2 != null) {
 
-			cur2 = cur2.next;
-
-			if (pre == null || cur2.val != pre.val) {
-
-				cur1.next = cur2;
-				cur1 = cur2;
-
-				pre = cur2;
+			if (p2.val != p1.val) {
+				p1.next = p2;
+				p1 = p2;
 			}
+
+			p2 = p2.next;
+
+			p1.next = null;
+
 		}
 
-		cur1.next = null;
-
 		return head;
-
 	}
 
 	public static void main(String[] args) {
@@ -49,8 +45,8 @@ public class RemoveDuplicatesFromSortedList {
 		RemoveDuplicatesFromSortedList rd = new RemoveDuplicatesFromSortedList();
 
 		ListNode head = new ListNode(1);
-//		head.next = new ListNode(1);
-//		head.next.next = new ListNode(2);
+		// head.next = new ListNode(1);
+		// head.next.next = new ListNode(2);
 
 		head = rd.deleteDuplicates(head);
 
